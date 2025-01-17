@@ -1,9 +1,30 @@
 import PptxGenJS from "pptxgenjs";
+import { master } from "./master.js";
+import { placeholder } from "./placeholder.js";
 
 export async function makePptx(employeeData) {
-  const pres = new PptxGenJS();
+  const pptx = new PptxGenJS();
+  pptx.layout = "LAYOUT_WIDE";
+  master(pptx);
+  placeholder(pptx);
+
+  let slideMaster = pptx.addSlide({ masterName: "MASTER_SLIDE" });
+  slideMaster.addText(
+    "How To Create PowerPoint Presentations with JavaScript",
+    {
+      x: 0.5,
+      y: 0.7,
+      fontSize: 18,
+    }
+  );
+
+  let slidePlaceholder = pptx.addSlide({ masterName: "PLACEHOLDER_SLIDE" });
+
+  // Add text, charts, etc. to any placeholder using its `name`
+  slidePlaceholder.addText("Body Placeholder here!", { placeholder: "body" });
+
   // Slide 1: Informazioni Generali
-  let slide1 = pres.addSlide();
+  let slide1 = pptx.addSlide();
   slide1.addText("Profilo Dipendente", {
     x: 1,
     y: 0.5,
@@ -31,7 +52,7 @@ export async function makePptx(employeeData) {
   );
 
   // Slide 2: Informazioni Organizzative
-  let slide2 = pres.addSlide();
+  let slide2 = pptx.addSlide();
   slide2.addText("Posizione Organizzativa", {
     x: 1,
     y: 0.5,
@@ -57,7 +78,7 @@ export async function makePptx(employeeData) {
   );
 
   // Slide 3: Skills e Competenze
-  let slide3 = pres.addSlide();
+  let slide3 = pptx.addSlide();
   slide3.addText("Competenze e Qualifiche", {
     x: 1,
     y: 0.5,
@@ -117,7 +138,7 @@ export async function makePptx(employeeData) {
   });
 
   // Slide 4: Timeline Carriera
-  let slide4 = pres.addSlide();
+  let slide4 = pptx.addSlide();
   slide4.addText("Sviluppo di Carriera", {
     x: 1,
     y: 0.5,
@@ -144,5 +165,5 @@ export async function makePptx(employeeData) {
     );
   });
 
-  return pres;
+  return pptx;
 }
