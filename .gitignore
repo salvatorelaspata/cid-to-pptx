@@ -128,3 +128,9 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# PPTX
+Browser-PowerPoint-Demo_*
+
+#DS Store
+.DS_Store
