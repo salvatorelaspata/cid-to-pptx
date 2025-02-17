@@ -4,6 +4,7 @@ import { Luxottica } from "../templates/Luxottica.js";
 import { firstSlide } from "./Slide1.js";
 import { secondSlide } from "./Slide2.js"
 export async function makePptx(employee) {
+  
   const pptx = new PptxGenJS();
   pptx.layout = "LAYOUT_WIDE";
 

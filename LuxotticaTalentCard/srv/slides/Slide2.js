@@ -31,7 +31,7 @@ export function secondSlide(pptx, employee) {
     const imageY = circleY + (circleDiameter - imageDiameter) / 2;
 
     slide.addImage({
-        path: "./src/images/sagoma.jpeg",
+        path: "./srv/images/sagoma.jpeg",
         x: imageX,
         y: imageY,
         w: imageDiameter,

@@ -1,5 +1,5 @@
-import { getEmployeeData } from "./src/api/index.js";
-import { makePptx } from "./src/slides/index.js";
+import { getEmployeeData } from "./srv/api/index.js";
+import { makePptx } from "./srv/slides/index.js";
 
 const employeeData = await getEmployeeData();
 
