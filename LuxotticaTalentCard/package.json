@@ -4,7 +4,7 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
+    "start": "cds-serve",
     "test": "node test.mjs",
     "cds-watch": "cds watch"
   },
@@ -13,7 +13,19 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@sap/cds": "^8.7.2",
     "express": "^4.21.2",
-    "pptxgenjs": "^3.12.0"
+    "pptxgenjs": "^3.12.0",
+    "@sap/xssec": "^4"
+  },
+  "cds": {
+    "requires": {
+      "[production]": {
+        "auth": "xsuaa"
+      }
+    }
+  },
+  "devDependencies": {
+    "@sap/cds-dk": "^8"
   }
 }

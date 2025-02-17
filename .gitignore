@@ -134,3 +134,9 @@ Browser-PowerPoint-Demo_*
 
 #DS Store
 .DS_Store
+
+#Build
+gen
+
+#mta_archives
+mta*

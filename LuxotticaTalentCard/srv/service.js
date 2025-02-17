@@ -1,4 +1,3 @@
-// srv/presentation-service.js
 import cds from '@sap/cds';
 import { getEmployeeData } from './api/index.js';
 import { makePptx } from './slides/index.js';
